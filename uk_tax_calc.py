@@ -25,3 +25,11 @@ def tax_calc3(income):
         pass
     return tax
 
+def tax_calc4(income):
+    if income <= 12000:
+        tax = 0
+    elif income > 12000:
+        tax = (income - 12000) * 0.2
+    else:
+        pass
+    return tax
