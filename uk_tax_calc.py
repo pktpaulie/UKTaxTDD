@@ -25,11 +25,18 @@ def tax_calc3(income):
         pass
     return tax
 
+# Modify to cater for income above 36,000
 def tax_calc4(income):
-    if income <= 12000:
+    """Fix me:Negative values return wrong value"""
+    tax = 0
+    if income <= 12000: # first band  of income
         tax = 0
-    elif income > 12000:
+    elif income <= 36000: # second band 12000 to 36000
         tax = (income - 12000) * 0.2
+    elif income > 36000: # third band of 36000 to infinity
+        tax = (24000 * 0.2) + ((income - 36000) * 0.4)
+    #elif income < 0:
+        #return 0
     else:
         pass
     return tax
